@@ -22,7 +22,9 @@ const db = mongoose.connection;
 db.on('connected', () => {
     console.log('Connected to MongoDB!');
   });
-
+app.get("/", (req,res)=>{
+  res.json("hello");
+})
 const exerciseRouter = require('./routes/exercise');
 const userRouter = require('./routes/user');
 
