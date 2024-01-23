@@ -11,7 +11,7 @@ export default function EditExercise({match}) {
   const [users, setUsers] = useState([]);
 
   useEffect(()=>{
-    axios.get('http://localhost:5000/exercise/'+match.params.id)
+    axios.get('https://exercise-tracker-api-teal.vercel.app/exercise/'+match.params.id)
     .then(response=>{
       setUsername(response.data.username);
       setDesciption(response.data.description);
@@ -19,7 +19,7 @@ export default function EditExercise({match}) {
       setDate(new Date(response.data.date))
     })
 
-    axios.get('http://localhost:5000/user')
+    axios.get('https://exercise-tracker-api-teal.vercel.app/user')
     .then(response=>{
       if(response.data.length > 0){
         setUsers(response.data.map(user => user.username))
@@ -51,7 +51,7 @@ export default function EditExercise({match}) {
     }
     
     console.log(exercise);
-    axios.post('http://localhost:5000/exercise/update'+match.params.id,exercise)
+    axios.post('https://exercise-tracker-api-teal.vercel.app/update'+match.params.id,exercise)
     .then(res=> console.log(res.data));
 
     window.location = '/';

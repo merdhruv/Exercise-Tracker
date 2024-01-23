@@ -9,7 +9,7 @@ export default function ExerciseList() {
   const [exercise, setExercise] = useState([]);
 
   useEffect(()=>{
-    axios.get('http://localhost:5000/exercise/')
+    axios.get('https://exercise-tracker-api-teal.vercel.app/exercise/')
     .then(response=>{
       setExercise(response.data)
     })
@@ -19,7 +19,7 @@ export default function ExerciseList() {
   },[])
 
   const deleteExercise = (id)=>{
-    axios.delete('http//localhost:5000/exercise/'+id)
+    axios.delete('https://exercise-tracker-api-teal.vercel.app/exercise/'+id)
     .then(res => console.log(res.data));
 
     setExercise(exercise.filter(el => el._id !== id))

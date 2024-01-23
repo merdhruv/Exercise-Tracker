@@ -8,7 +8,7 @@ const app = express();
 const port = process.env.PORT || 5000;
 
 app.use(cors({
-  origin : ["https://exercise-tracker-api-teal.vercel.app/"],
+  origin : ["https://exercise-tracker-opal.vercel.app/"],
   methods : ["POST","GET"],
   credentials : true
 }));
